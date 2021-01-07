@@ -3,6 +3,8 @@ const dashboard = {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "",
+            "width": 600,
+            "height": 350,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -50,6 +52,8 @@ const dashboard = {
         ChartTwo = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "",
+            "width": 600,
+            "height": 350,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -92,6 +96,8 @@ const dashboard = {
         ChartThree = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "",
+            "width": 600,
+            "height": 350,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -202,6 +208,8 @@ const dashboard = {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "",
+            "width": 600,
+            "height": 350,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -239,12 +247,58 @@ const dashboard = {
             "transform": [{ "filter": { "field": "measure", "equal": "Sodium" } }]
         }
         vegaEmbed("#chart4", ChartOne)
+
+        ChartTwo = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                "title": "",
+                "width": 600,
+                "height": 350,
+                "data": {
+                    "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
+                    "format": { "type": "csv" }
+                },
+                "mark": { "type": "circle" },
+                "encoding": {
+                    "x": {
+                        "title": "Year",
+                        "field": "sample date",
+                        "timeUnit": "year",
+                        "type": "ordinal"
+                    },
+                    "y": {
+                        "title": "Value Total Coliforms(mg/l)",
+                        "aggregate": "average",
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "location",
+                        "type": "nominal"
+                    },
+                    "tooltip": [{
+                            "field": "location",
+                            "type": "nominal",
+                            "title": "Location"
+                        },
+                        {
+                            "field": "value",
+                            "type": "quantitative",
+                            "aggregate": "average",
+                            "title": "Average Amount of  Total coliforms(mg/l)"
+                        }
+                    ]
+                },
+                "transform": [{ "filter": { "field": "measure", "equal": "Total coliforms" } }, { "filter": { "field": "sample date", "timeUnit": "year", "equal": 2009 } }]
+            },
+            vegaEmbed("#chart5", ChartTwo)
     },
     DashboardThree: function() {
         {
             ChartOne = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
                 "title": "",
+                "width": 600,
+                "height": 350,
                 "data": {
                     "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                     "format": { "type": "csv" }
@@ -285,6 +339,56 @@ const dashboard = {
                 "transform": [{ "filter": { "field": "measure", "equal": "Methylosmoline" } }, { "filter": { "field": "location", "equal": "Somchair" } }]
             }
             vegaEmbed("#chart6", ChartOne)
+
+            ChartTwo = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+                "title": "",
+                "width": 600,
+                "height": 350,
+                "data": {
+                    "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
+                    "format": { "type": "csv" }
+                },
+                "mark": { "type": "line" },
+                "encoding": {
+                    "x": {
+                        "title": "Month",
+                        "field": "sample date",
+                        "timeUnit": "month",
+                        "type": "ordinal"
+                    },
+                    "y": {
+                        "title": "Value Total Aluminium(µg/l)",
+                        "aggregate": "average",
+                        "field": "value",
+                        "type": "quantitative"
+                    },
+                    "color": {
+                        "field": "location",
+                        "type": "nominal"
+                    },
+                    "tooltip": [{
+                            "field": "location",
+                            "type": "nominal",
+                            "title": "Location"
+                        },
+                        {
+                            "field": "value",
+                            "type": "quantitative",
+                            "aggregate": "average",
+                            "title": "Average Amount of  Total Aluminium(µg/l)"
+                        },
+                        {
+                            "field": "sample date",
+                            "timeUnit": "month",
+                            "type": "ordinal",
+                            "title": "Month"
+                        }
+                    ]
+                },
+                "transform": [{ "filter": { "field": "measure", "equal": "Aluminium" } }]
+            }
+            vegaEmbed("#chart7", ChartTwo)
         }
     }
 }
