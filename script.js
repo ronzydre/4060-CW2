@@ -1,10 +1,10 @@
 const dashboard = {
-    DashboardOne: function() {
+    QuestionOne: function() {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "The average amount of Benzo(b)fluoranthene (µg/l) in Boonsri across each month of the year",
-            "width": 600,
-            "height": 350,
+            "width": 800,
+            "height": 500,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -52,8 +52,8 @@ const dashboard = {
         ChartTwo = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "The average amount of Sodium (mg/l) in Sakda across each years",
-            "width": 600,
-            "height": 350,
+            "width": 800,
+            "height": 500,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -96,8 +96,8 @@ const dashboard = {
         ChartThree = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "The average amount of Aluminium (µg/l) in each location across each year",
-            "width": 600,
-            "height": 350,
+            "width": 800,
+            "height": 500,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -109,7 +109,7 @@ const dashboard = {
                     "bind": { "input": "select", "options": [null, "Chai", "Sakda", "Somchair", "Kannika", "Busarakhan"] }
                 }
             },
-            "mark": { "type": "line", "strokeWidth": 4, "point": { "filled": false, "fill": "white", "size": 100 } },
+            "mark": { "type": "line", "strokeWidth": 4, "point": { "filled": false, "fill": "white", "size": 50 } },
             "encoding": {
                 "x": {
                     "title": "Year",
@@ -156,12 +156,12 @@ const dashboard = {
         vegaEmbed("#chart3", ChartThree)
     },
 
-    DashboardTwo: function() {
+    QuestionTwo: function() {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "title": "A dashboard containing the average amount of Sodium (µg/l) in each location across each year",
-            "width": 600,
-            "height": 350,
+            "width": 800,
+            "height": 500,
             "data": {
                 "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                 "format": { "type": "csv" }
@@ -208,8 +208,8 @@ const dashboard = {
         ChartTwo = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
                 "title": "The average amount of Total Coliform (mg/l) in each location in the year 2009",
-                "width": 600,
-                "height": 350,
+                "width": 800,
+                "height": 500,
                 "data": {
                     "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                     "format": { "type": "csv" }
@@ -249,13 +249,13 @@ const dashboard = {
             },
             vegaEmbed("#chart5", ChartTwo)
     },
-    DashboardThree: function() {
+    QuestionThree: function() {
         {
             ChartOne = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
                 "title": "The average amount of Methylosmoline (µg/l) in Somchair across each year",
-                "width": 600,
-                "height": 350,
+                "width": 800,
+                "height": 500,
                 "data": {
                     "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                     "format": { "type": "csv" }
@@ -300,8 +300,8 @@ const dashboard = {
             ChartTwo = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
                 "title": "The average amount of Aluminium (µg/l) in each location across each month",
-                "width": 600,
-                "height": 350,
+                "width": 800,
+                "height": 500,
                 "data": {
                     "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                     "format": { "type": "csv" }
@@ -309,7 +309,7 @@ const dashboard = {
                 "mark": {
                     "type": "line",
                     "strokeWidth": 4,
-                    "point": { "filled": false, "fill": "white", "size": 100 }
+                    "point": { "filled": false, "fill": "white", "size": 20 }
                 },
                 "selection": {
                     "org": {

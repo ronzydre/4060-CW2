@@ -171,6 +171,10 @@
                 <p>The measure is filtered, to obtain the values for Sodium. A tooltip is added to the graph to help show the location, value and year for each point. The use of the row feature is implemented so to create graphs representing each location.
                     Also, titles were used to make it understandable for the user.
                 </p>
+                <div class="img-responsive">
+                    <img src="img/analysis1.png " alt=" " class="img-fluid " srcset=" ">
+                </div>
+                <p>The above table shows the breakdown of the average amount of Sodium across the years in each location. From the table above it can be seen that multiple values are missing, which corresponds to the dashboard displayed above.</p>
             </div>
         </div>
         <div class="row card-body">
@@ -276,11 +280,6 @@
                 </div>
             </div>
             <!-- Question three ends -->
-            <div class="row ">
-                <div class="col-md-12 ">
-                    <img src="img/analysis1.png " alt=" " class="img-fluid " srcset=" ">
-                </div>
-            </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vega@5.17.0 "></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0 "></script>
@@ -290,10 +289,12 @@
 <script src="script.js "></script>
 <script>
     $(document).ready(function() {
-        dashboard.DashboardOne();
-        dashboard.DashboardTwo();
-        dashboard.DashboardThree();
+        dashboard.QuestionOne();
+        dashboard.QuestionTwo();
+        dashboard.QuestionThree();
     });
 </script>
+
+</html>
 
 </html>
