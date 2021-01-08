@@ -2,7 +2,7 @@ const dashboard = {
     DashboardOne: function() {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "",
+            "title": "The average amount of Benzo(b)fluoranthene (µg/l) in Boonsri across each month of the year",
             "width": 600,
             "height": 350,
             "data": {
@@ -25,7 +25,7 @@ const dashboard = {
                     "type": "ordinal"
                 },
                 "y": {
-                    "title": "Benzo(b)fluoranthene (µg/l)",
+                    "title": "The Average amount of Benzo(b)fluoranthene (µg/l)",
                     "aggregate": "average",
                     "field": "value",
                     "type": "quantitative"
@@ -44,14 +44,14 @@ const dashboard = {
                     }
                 ]
             },
-            "transform": [{ "filter": { "field": "location", "equal": "Boonsri" } }, { "filter": { "field": "measure", "equal": "Benzo(b)fluoranthene" } }, { "filter": { "field": "value", "gt": 0 } }]
+            "transform": [{ "filter": { "field": "location", "equal": "Boonsri" } }, { "filter": { "field": "measure", "equal": "Benzo(b)fluoranthene" } }]
 
         }
         vegaEmbed('#chart1', ChartOne);
 
         ChartTwo = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "",
+            "title": "The average amount of Sodium (mg/l) in Sakda across each years",
             "width": 600,
             "height": 350,
             "data": {
@@ -67,7 +67,7 @@ const dashboard = {
                     "type": "ordinal"
                 },
                 "y": {
-                    "title": "Sodium (mg/l)",
+                    "title": "The average amount of Sodium (mg/l)",
                     "aggregate": "average",
                     "field": "value",
                     "type": "quantitative",
@@ -95,55 +95,7 @@ const dashboard = {
 
         ChartThree = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "",
-            "width": 600,
-            "height": 350,
-            "data": {
-                "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
-                "format": { "type": "csv" }
-            },
-            "mark": { "type": "circle" },
-            "encoding": {
-                "x": {
-                    "title": "Year",
-                    "field": "sample date",
-                    "timeUnit": "year",
-                    "type": "ordinal"
-                },
-                "y": {
-                    "title": "Copper (µg/l)",
-                    "aggregate": "average",
-                    "field": "value",
-                    "type": "quantitative"
-                },
-                "color": {
-                    "field": "value",
-                    "aggregate": "average",
-                    "type": "quantitative"
-                },
-                "size": { "field": "value", "aggregate": "average", "type": "quantitative" },
-                "tooltip": [{
-                        "field": "sample date",
-                        "timeUnit": "year",
-                        "type": "ordinal",
-                        "title": "Year"
-                    },
-                    {
-                        "field": "value",
-                        "type": "quantitative",
-                        "aggregate": "average",
-                        "title": "Average Amount of Copper (µg/l)"
-                    }
-                ]
-            },
-            "transform": [{ "filter": { "field": "measure", "equal": "Copper" } }]
-
-        }
-        vegaEmbed("#chart3", ChartThree)
-
-        ChartFour = {
-            "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "",
+            "title": "The average amount of Aluminium (µg/l) in each location across each year",
             "width": 600,
             "height": 350,
             "data": {
@@ -167,7 +119,7 @@ const dashboard = {
                     "scale": { "domain": [2008, 2009, 2010, 2011, 2012, 2013, 2014] }
                 },
                 "y": {
-                    "title": "Value Aluminium(µg/l)",
+                    "title": "Average amount of Aluminium(µg/l)",
                     "aggregate": "average",
                     "field": "value",
                     "type": "quantitative"
@@ -201,13 +153,13 @@ const dashboard = {
             },
             "transform": [{ "filter": { "field": "measure", "equal": "Aluminium" } }]
         }
-        vegaEmbed("#chart3b", ChartFour)
+        vegaEmbed("#chart3", ChartThree)
     },
 
     DashboardTwo: function() {
         ChartOne = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-            "title": "",
+            "title": "A dashboard containing the average amount of Sodium (µg/l) in each location across each year",
             "width": 600,
             "height": 350,
             "data": {
@@ -223,7 +175,7 @@ const dashboard = {
                     "type": "ordinal"
                 },
                 "y": {
-                    "title": "Value Sodium(µg/l)",
+                    "title": "Average amount of Sodium(µg/l)",
                     "aggregate": "average",
                     "field": "value",
                     "type": "quantitative"
@@ -241,6 +193,11 @@ const dashboard = {
                         "type": "quantitative",
                         "aggregate": "average",
                         "title": "Average Amount of  Sodium(µg/l)"
+                    },
+                    {
+                        "field": "location",
+                        "type": "nominal",
+                        "title": "Location"
                     }
                 ]
             },
@@ -250,7 +207,7 @@ const dashboard = {
 
         ChartTwo = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-                "title": "",
+                "title": "The average amount of Total Coliform (mg/l) in each location in the year 2009",
                 "width": 600,
                 "height": 350,
                 "data": {
@@ -266,7 +223,7 @@ const dashboard = {
                         "type": "ordinal"
                     },
                     "y": {
-                        "title": "Value Total Coliforms(mg/l)",
+                        "title": "The Average amount of Total Coliforms(mg/l)",
                         "aggregate": "average",
                         "field": "value",
                         "type": "quantitative"
@@ -296,7 +253,7 @@ const dashboard = {
         {
             ChartOne = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-                "title": "",
+                "title": "The average amount of Methylosmoline (µg/l) in Somchair across each year",
                 "width": 600,
                 "height": 350,
                 "data": {
@@ -312,7 +269,7 @@ const dashboard = {
                         "type": "ordinal"
                     },
                     "y": {
-                        "title": "Value Methylosmoline(µg/l)",
+                        "title": "Average amount of Methylosmoline(µg/l)",
                         "aggregate": "average",
                         "field": "value",
                         "type": "quantitative"
@@ -342,14 +299,25 @@ const dashboard = {
 
             ChartTwo = {
                 "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-                "title": "",
+                "title": "The average amount of Aluminium (µg/l) in each location across each month",
                 "width": 600,
                 "height": 350,
                 "data": {
                     "url": "https://raw.githubusercontent.com/ronzydre/4060-CW2/main/Boonsong%20Lekagul%20waterways%20readings.csv",
                     "format": { "type": "csv" }
                 },
-                "mark": { "type": "line" },
+                "mark": {
+                    "type": "line",
+                    "strokeWidth": 4,
+                    "point": { "filled": false, "fill": "white", "size": 100 }
+                },
+                "selection": {
+                    "org": {
+                        "type": "single",
+                        "fields": ["location"],
+                        "bind": { "input": "select", "options": [null, "Chai", "Sakda", "Somchair", "Kannika", "Busarakhan"] }
+                    }
+                },
                 "encoding": {
                     "x": {
                         "title": "Month",
@@ -358,14 +326,18 @@ const dashboard = {
                         "type": "ordinal"
                     },
                     "y": {
-                        "title": "Value Total Aluminium(µg/l)",
+                        "title": "Average amount of Aluminium(µg/l)",
                         "aggregate": "average",
                         "field": "value",
                         "type": "quantitative"
                     },
                     "color": {
-                        "field": "location",
-                        "type": "nominal"
+                        "condition": {
+                            "selection": "org",
+                            "field": "location",
+                            "type": "nominal"
+                        },
+                        "value": "grey"
                     },
                     "tooltip": [{
                             "field": "location",
